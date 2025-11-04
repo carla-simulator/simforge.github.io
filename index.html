@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e3d8263e91.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>SimForge - Physical AI Simulation for Robotics & Autonomous Systems</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">SimForge</a>
+                <ul class="nav-links">
+                    <li><a href="#applications">Applications</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Physical AI Simulation<br>for Real World robotics solutions</h1>
+            <p>Build, test, and train autonomous systems with photorealistic 3D simulation environments. From concept to
+                deployment, SimForge accelerates your development cycle.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="applications" class="applications">
+        <div class="container">
+            <div class="section-header">
+                <h2></h2>Application Domains</h2>
+                <p>Purpose-built simulation solutions for next-generation autonomous systems</p>
+            </div>
+            <div class="app-grid">
+                <div class="app-card" onclick="toggleDetails('automotive')">
+                    <div class="app-card-image"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./img/automotive.png');">
+                    </div>
+                    <div class="app-card-content">
+                        <h3>Automotive</h3>
+                        <p>Simulation for autonomous vehicle development and advanced driver assistance systems.
+                        </p>
+                        <div id="automotive" class="app-details">
+                            <h4>Key Capabilities</h4>
+                            <ul>
+                                <li>High-fidelity sensor simulation (LiDAR, RADAR, cameras)</li>
+                                <li>Vehicle dynamics simulation</li>
+                                <li>Ground truth generation - semantic labels and bounding boxes</li>
+                                <li>Weather and lighting simulation</li>
+                                <li>OpenDRIVE and OpenSCENARIO compatibility</li>
+                                <li>Scalability - contanerization support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" onclick="toggleDetails('warehouse')">
+                    <div class="app-card-image"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./img/warehouse_robotics.png');">
+                    </div>
+                    <div class="app-card-content">
+                        <h3>Warehouse Robotics</h3>
+                        <p>Warehouse environment simulation for digital twins of autonomous mobile robots and robotic
+                            arms.</p>
+                        <div id="warehouse" class="app-details">
+                            <h4>Key Capabilities</h4>
+                            <ul>
+                                <li>3D warehouse interior simulation</li>
+                                <li>Autonomous mobile robot and articulated arm simulation</li>
+                                <li>Sensor simulation - camera, LIDAR</li>
+                                <li>Conveyor network and material handling system simulation</li>
+                                <li>ROS connectivity</li>
+                                <li>Ground truth generation - semantic labels, bounding boxes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" onclick="toggleDetails('delivery')">
+                    <div class="app-card-image"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80');">
+                    </div>
+                    <div class="app-card-content">
+                        <h3>Last-Mile Delivery</h3>
+                        <p>Simulation for autonomous delivery vehicles, robots and drones in urban and suburban
+                            environments.</p>
+                        <div id="delivery" class="app-details">
+                            <h4>Key Capabilities</h4>
+                            <ul>
+                                <li>High fidelity urban and suburban environment simulation</li>
+                                <li>3D digital twins: vehicles, robots and buildings</li>
+                                <li>ROS connectivity</li>
+                                <li>Robot and vehicle dynamics modelling</li>
+                                <li>Omniverse asset ecosystem</li>
+                                <li>Ground truth generation - semantic labels, bounding boxes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" onclick="toggleDetails('aerospace')">
+                    <div class="app-card-image"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./img/aerospace.png');">
+                    </div>
+                    <div class="app-card-content">
+                        <h3>Aerospace</h3>
+                        <p>UAV and autonomous aircraft systems with realistic flight dynamics and environments.</p>
+                        <div id="aerospace" class="app-details">
+                            <h4>Key Capabilities</h4>
+                            <ul>
+                                <li>High-fidelity flight dynamics modeling</li>
+                                <li>Atmospheric and weather simulation</li>
+                                <li>Sensor suite simulation (GPS, IMU, altimeter, cameras)</li>
+                                <li>Flight-deck instrumentation visualization</li>
+                                <li>CESIUM ion integration for geospatial data</li>
+                                <li>FMU integration</li>
+                                <li>ADSB data integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" onclick="toggleDetails('logistics')">
+                    <div class="app-card-image"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./img/logistics_1.png');">
+                    </div>
+                    <div class="app-card-content">
+                        <h3>Logistics</h3>
+                        <p>End-to-end supply chain simulation for automation with intelligent robotics.</p>
+                        <div id="logistics" class="app-details">
+                            <h4>Key Capabilities</h4>
+                            <ul>
+                                <li>Cross-dock operations simulation</li>
+                                <li>Automated guided vehicles (AGV) digital twins</li>
+                                <li>Conveyor network and material handling system simulation</li>
+                                <li>V2X and V2V imitation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" onclick="toggleDetails('manufacturing')">
+                    <!-- <div class="app-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80');"></div> -->
+                    <div class="app-card-image"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./img/manufacturing.jpg');">
+                    </div>
+                    <div class="app-card-content">
+                        <h3>Manufacturing & Assembly</h3>
+                        <p>High fidelity digital twins of autonomous mobile robots and robotic arms and their workspaces.</p>
+                        <div id="manufacturing" class="app-details">
+                            <h4>Key Capabilities</h4>
+                            <ul>
+                                <li>Multi-modal perception simulation</li>
+                                <li>High-fidelity physics simulation</li>
+                                <li>Shared workspace simulation</li>
+                                <li>Parallel scalability for reinforcement learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why SimForge</h2>
+                <p>Comprehensive simulation solutions for autonomous systems development</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Ready-to-Deploy</h3>
+                    <p>Access our suite of pre-built simulators and start testing immediately with minimal setup.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored simulation environments developed specifically for your unique requirements and use
+                        cases.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>API Integration</h3>
+                    <p>Seamlessly connect to autonomy stacks and AI systems through our comprehensive API framework.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Training Data</h3>
+                    <p>Generate high-quality synthetic data for machine learning and neural network training at scale.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-image"></i></div>
+                    <h3>Photorealistic Environments</h3>
+                    <p>Leverage cutting-edge graphics engines for unparalleled visual fidelity and realism.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-atom"></i></div>
+                    <h3>Physically Accurate</h3>
+                    <p>Advanced physics simulation for precise modeling of real-world dynamics and interactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>Product Showcase</h2>
+                <p>Explore our simulation solutions in action</p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-item active">
+                        <div class="carousel-image">
+                            <video id="carla-video" class="bg-video" autoplay muted loop playsinline preload="auto">
+                                <source src="./img/carla.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-overlay">
+                            <h3>CARLA Simulator</h3>
+                            <p>High-fidelity simulator for autonomous vehicle development. Cameras, LIDAR, RADAR. Ground
+                                truth semantic labelling and </p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image">
+                            <div class="carousel-image" style="background-image: url('./img/carla.mp4');">
+                                <video autoplay muted loop playsinline class="bg-video" poster="./img/carla_frame.png">
+                                    <source src="./img/explorer.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="carousel-overlay">
+                            <h3>IPEx Lunar Simulator</h3>
+                            <p>State of the art lunar robotics simulator created for the Lunar Autonomy Challenge
+                                competition.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image">
+                            <video autoplay muted loop playsinline class="bg-video" poster="./img/carla_frame.png">
+                                <source src="./img/aerosim.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-overlay">
+                            <h3>Aerosim Flight Simulator</h3>
+                            <p>Scalable, performant flight simulator for use in the development of autonomous systems in
+                                aerospace engineering.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image">
+                            <video autoplay muted loop playsinline class="bg-video" poster="./img/carla_frame.png">
+                                <source src="./img/spear.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-overlay">
+                            <h3>Industrial Robotics Simulator</h3>
+                            <p>Simulator for manufacturing and assembly, logistics and last-mile delivery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-button prev" onclick="moveCarousel(-1)">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                </div>
+
+                <div class="carousel-button next" onclick="moveCarousel(1)">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    </svg>
+                </div>
+
+                <div class="carousel-indicators">
+                    <div class="indicator active" onclick="goToSlide(0)"></div>
+                    <div class="indicator" onclick="goToSlide(1)"></div>
+                    <div class="indicator" onclick="goToSlide(2)"></div>
+                    <div class="indicator" onclick="goToSlide(3)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology" class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technology Stack</h2>
+                <p>SimForge solutions are built on industry-leading simulation and graphics platforms</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-logo">
+                        <img src="./img/carla_logo.png">
+                    </div>
+                    <div>
+                        <h4>CARLA</h4>
+                        <p>Open-source autonomous driving simulator</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo" style="background: white;">
+                        <img src="./img/omniverse_logo.webp">
+                    </div>
+                    <div>
+                        <h4>NVIDIA Omniverse</h4>
+                        <p>3D design and simulation collaboration</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">
+                        <img src="./img/isaac_sim_logo.jpeg">
+                    </div>
+                    <div>
+                        <h4>Isaac Sim</h4>
+                        <p>Robotics simulation platform</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo" style="background: white;">
+                        <img src="./img/chrono_logo.png">
+                    </div>
+                    <div>
+                        <h4>Chrono</h4>
+                        <p>High-fidelity physics engine</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo" style="background: white;">
+                        <img src="./img/ue.png">
+                    </div>
+                    <div>
+                        <h4>Unreal Engine 5</h4>
+                        <p>Photorealistic rendering engine</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo" style="background: white;">
+                        <img src="./img/unity_lego_logo.png">
+                    </div>
+                    <div>
+                        <h4>Unity 3D</h4>
+                        <p>Rendering engine with cross-platform development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="section-header">
+                    <h2>Get in Touch</h2>
+                    <p>Ready to transform your development workflow? Let's discuss how SimForge can help.</p>
+                </div>
+
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="industry">Industry Focus</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select an industry</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="warehouse">Warehouse Robotics</option>
+                            <option value="delivery">Last-Mile Delivery</option>
+                            <option value="aerospace">Aerospace</option>
+                            <option value="logistics">Logistics</option>
+                            <option value="manufacturing">Manufacturing & Assembly</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"
+                            placeholder="Tell us about your project and simulation needs..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SimForge</h4>
+                    <p>Advancing autonomous systems through high-fidelity physical AI simulation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <a href="#applications">Automotive</a>
+                    <a href="#applications">Warehouse Robotics</a>
+                    <a href="#applications">Last-Mile Delivery</a>
+                    <a href="#applications">Aerospace</a>
+                    <a href="#applications">Logistics</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Documentation</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>info@simforge.io</p>
+                    <p>SimForge.io</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SimForge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDetails(id) {
+            const detail = document.getElementById(id);
+            const allDetails = document.querySelectorAll('.app-details');
+
+            allDetails.forEach(d => {
+                if (d.id !== id) {
+                    d.classList.remove('active');
+                }
+            });
+
+            detail.classList.toggle('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Carousel
+        window.addEventListener("load", () => {
+            const firstVideo = document.getElementById('carla-video');
+            console.log(firstVideo)
+
+            if (firstVideo) {
+                setTimeout(() => {
+                    console.log('now');
+                    //firstVideo.play();
+                    firstVideo.play().catch(() => {
+                        console.log('fail')
+                    });
+                }, 1000);
+
+            }
+        });
+
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            moveCarousel(1);
+        }, 10000);
+
+    </script>
+</body>
+
+</html>
